@@ -1,0 +1,43 @@
+<script>
+$('body').css({"background-image":"url(pacific-rim-characters-wallpapers-pacific-rim-movie-wallpapers-hd-backgrounds-pacific-rim-wallpapers.jpg)"});
+    IMDBFeaturePage(<%= @featuredata[:movie].imdb %>);
+</script>
+
+<div class="headFix">
+<div class="whiteNoise">
+    <div class="black mypage">
+
+      <div class="col-md-9">
+
+          <h3>Movie Talk</h3>
+              <%= form_tag('/feature?id='+params[:id], method: "get") do %>
+                <%= select_tag "id", options_from_collection_for_select(@featuredata[:movies], "id", "title"), prompt: "Select one of your movies", :onchange => "this.form.submit();" %>
+              <% end %>
+
+          <div class="rate-movie">
+            <h2><strong><%= @featuredata[:movie].title %></strong></h2>
+             <div class="viewTrailer"></div>
+            <p style="text-align:justify">Description: <%= @featuredata[:movie].description %></p>
+            <p>IMDb Rating: <strong><% dis_rat = @featuredata[:movie].rating/10 %>(<%= dis_rat < 0 || dis_rat > 10 ? 'unrated' : 9733.chr(Encoding::UTF_8) * dis_rat + 9734.chr(Encoding::UTF_8) * (10-dis_rat) %>)</strong></p>
+          </div><br>
+
+                <div class="fb-comments" style="overflow: scroll; opacity:0.9; border-radius:5px" data-href="http://moviejam.herokuapp.com/feature?id=<%= @featuredata[:movie].id %>" data-width="750" data-numposts="2" data-colorscheme="dark" data-order-by="reverse_time"></div>
+
+      </div>
+
+      <div class="col-md-3 twitter" style="float:right; padding:5px; margin-top:2%">
+        <p>MovieJam</p><div class="fb-like" data-href="http://moviejam.herokuapp.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div><br><br>
+
+       <a class="twitter-timeline" href="https://twitter.com/IMDb/lists/imdb-twitter-2" data-widget-id="585287226373771264">Tweets from https://twitter.com/IMDb/lists/imdb-twitter-2</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+     <div style="border:2px solid grey; margin-top:10px; border-radius:5px; padding: 5px; font-weight:none"><p>Fellow JAM-mer's for this movie:</p>
+          <% @featuredata[:moviejams].each do |mj| %>
+              <li><%= mj.user.name %></li>
+          <% end %>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>

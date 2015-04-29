@@ -1,0 +1,58 @@
+<script> 
+    $('body').css({"background-image":"url(avengers-movie-wallpaper.jpg)"});
+    Upcoming();
+    FeatureTrailer();
+</script>
+
+<div class="jumbotron">
+    <div class="black">
+        <h3>Just Another Movie!</h3>
+        <h4>Welcome <%= current_user.name %>, what movie will you JAM tonight?</h4>
+    </div>
+</div>
+<div class ="whiteNoise">
+    <div class="black mypage">
+        <div class="row">
+            <div class="col-md-9">
+                    <h2>Upcoming Movies</h2>
+                    <div class="row upcoming" ></div>
+            </div>
+            <div class="stick-to-right">
+                <div class="search">
+                    <h2 >My Movie Search</h2>
+                    <input type="text"  id="query" onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()" /><br><br>
+                    <select id="genre" onchange="changeGenre(this.value);" >
+                        <option value="">Genre (optional)</option>
+                        <option value="4401">Action & Adventure</option>
+                        <option value="4404">Comedy</option>
+                        <option value="4405">Documentary</option>
+                        <option value="4406">Drama</option>
+                        <option value="4408">Horror</option>
+                        <option value="4410">Kids & Family</option>
+                        <option value="4412">Romance</option>
+                        <option value="4413">Sci-Fi & Fantasy</option>
+                        <option value="4416">Thriller</option>
+                        <option value="4411">Musical</option>
+                        <option value="4409">Independent</option>
+                    </select><br><br>
+                    <input type="button"  id="btnSearch" value="Search" onclick="PostSearch();" />
+                </div>
+                <h2 class="">My Movie JAM</h2>
+                <div class="myList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="whiteNoise">
+    <div class="black mypage">
+            <div class="row">
+                <p class="synopsis"></p>
+                <div class="viewTrailer"></div>
+            </div>
+        </div>
+    </div>
+</div><br>
+
+
+
+

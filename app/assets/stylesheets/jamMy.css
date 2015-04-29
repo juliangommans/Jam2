@@ -1,0 +1,261 @@
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headFix {
+    width: auto;
+    margin-top: 6%;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.footer {
+
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    text-align:center;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+}
+
+.col-md-1 {
+    width:150px;
+    height: 150px;
+}
+
+.poster {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.poster:active {
+    background-color: yellow;
+    border-radius: 10px;
+}
+
+.search {
+    position: relative;
+}
+
+.viewTrailer {
+    text-align:center;
+    border: solid;
+    border-width:1px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom:10px;
+    color:black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.viewTrailer iframe {
+    border-radius: 10px;
+    border:2px solid #075876;
+    box-shadow: 10px 10px 10px #297995;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.viewTrailer h2 {
+    color: white;
+}
+
+.movie-link {
+  color: black;
+  text-decoration: none;
+  margin: center;
+  text-align: center;
+}
+
+div.jumbotron {
+    height:225px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid black;
+    text-align:center;
+    
+}
+.black {
+    width: auto;
+    margin: 2%;
+    background-color:black;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.mypage {
+    margin: 1%;
+    color: white;
+    opacity: 0.9;
+    padding: 10px;
+}
+
+.mypage p {
+    color:white;
+    font-weight:normal;
+}
+
+.mypage h3 {
+    font-family: 'Dancing Script', cursive;  
+    color: yellow;
+    font-size: 50px;
+}
+
+div.jumbotron h3 {
+    font-family: 'Dancing Script', cursive;  
+   opacity: 1;
+    font-size: 60px;
+    margin-bottom: 20px;
+    color:yellow;
+}
+
+div.jumbotron h4 {
+    opacity: 1;
+    font-size: 20px;
+}
+
+#homeLink a {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    color: yellow;
+    padding-bottom:10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.whiteNoise {
+    color: black;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upcoming {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.row upcoming {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.stick-to-right {
+    width: 270px;
+    height: auto;
+    float: right;
+    padding-bottom: 10px;
+    padding-right:10px;
+}
+.main-table {
+    font-size: 12px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    width: 900px;
+    border: 1px solid white;
+}
+
+.removebtn, .rightbox {
+    float: right;
+    margin: 3%;
+    border-radius: 10px;
+    position:relative;
+}
+.watchbtn, .leftbox {
+    float: left;
+    margin: 3%;
+    border-radius: 10px;
+}
+.removebtn, .watchbtn{
+    color:black;
+}
+td {
+   text-align: left;
+}
+button, input {
+    color: black;
+}
+
+#userList {
+    font-size:14px;
+    height:auto;
+    padding-bottom:10px;
+    text-align:center;
+}
+
+#blanket {
+   background-color:#111;
+   opacity: 0.65;
+   *background:none;
+   position:absolute;
+   z-index: 9001;
+   top:0px;
+   left:0px;
+   width:100%;
+}
+
+.popUpDiv {
+    position:absolute;
+    background-color: white;
+    color: black;
+    width:500px;
+    height:500px;
+    overflow:scroll;
+    border:2px solid black;
+    z-index: 9002;
+    border-radius: 10px;
+}
+
+
+.popUpDiv a {top:20px; left:20px}
+
+
+td, th {
+    width: auto;
+    padding: 5px;
+    margin: auto;
+    font-size: 14px;
+}
+
+.poster-search {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.remove{
+    color: yellow;
+    font-weight:normal;
+}
+
+.fb-like {
+    color:white;
+    font-weight:bold;
+}
+
+.missing {
+    color:white;
+}
+.movie, #id {
+    color: black;
+    font-weight:normal;
+}

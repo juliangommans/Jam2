@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jam</title>
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+     <div id="fb-root"></div>
+
+     <div id="blanket" style="display:none;"></div>
+                    <div id="popUpDiv" class="popUpDiv" style="display:none;">
+                      <table>
+                      <a href="#" class="p-title" id="ccc" onclick="popup('popUpDiv')" >- Click to close -</a><br>
+                        <tr><td><a href="#" class="movie-link" id='a0' onclick="popup('popUpDiv')" ></a><br></td>
+                        <td><a href="#" class="movie-link" id='a1' onclick="popup('popUpDiv')" ></a><br></td></tr>
+                        <tr><td><a href="#" class="movie-link" id='a2' onclick="popup('popUpDiv')" ></a><br></td>
+                        <td><a href="#" class="movie-link" id='a3' onclick="popup('popUpDiv')" ></a><br></td></tr>
+                        <tr><td><a href="#" class="movie-link" id='a4' onclick="popup('popUpDiv')" ></a><br></td>
+                        <td><a href="#" class="movie-link" id='a5' onclick="popup('popUpDiv')" ></a><br></td></tr>
+                        <tr><td><a href="#" class="movie-link" id='a6' onclick="popup('popUpDiv')" ></a><br></td>
+                        <td><a href="#" class="movie-link" id='a7' onclick="popup('popUpDiv')" ></a><br></td></tr>
+                        <tr><td><a href="#" class="movie-link" id='a8' onclick="popup('popUpDiv')" ></a><br></td>
+                        <td><a href="#" class="movie-link" id='a9' onclick="popup('popUpDiv')" ></a><br></td></tr>
+                      </table>
+                    </div>
+     </div>
+                    <div id="popUpDiv2" class="popUpDiv" style="display:none;"><a href="#" class="p-title pud2" id="ccc" onclick="popup('popUpDiv2')" >- Click to close -</a><br>
+                      <div class="pud2" id="pud"></div></div>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <div id='homeLink' class="navbar-brand"><%= link_to "Jam", movies_path %></div>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li><%= link_to "Home", movies_path %></li>
+                <% if !current_user.nil? %>
+                  <li><%= link_to "MyAccount", moviejams_path %></li>
+                <% end %>
+                <% if !current_user.nil? %>
+                  <li><%= link_to "MovieTalk", feature_path+"?id=#{feature_movie.id}" %></li>
+                <% end %>
+                <% if current_user.try(:admin?) %>
+                  <li><%= link_to "Admin", admin_path %></li>
+                <% end %>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <% if !current_user.nil? %>
+                <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                <% end %>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="container body-content">
+         <%= yield %>
+      <footer class="footer">
+        <% time = Time.now %>
+        <p style="padding-top:10px">Team JAM-mer's Jullian Gommans, Sandra Muller, Steven Brown- <%= time.strftime("It's %-l:%M%P on %A, %-d %B %Y") %></p>
+      </footer>
+  </div>
+</body>
+</html>

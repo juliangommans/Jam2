@@ -1,0 +1,34 @@
+<script> $('body').css({"background-image":"url(wall_e_hd_1080p-HD.jpg)"});</script>
+
+<div class="headFix">
+  
+   <div class="whiteNoise">
+    <div class="black mypage">
+      <div class="table">
+      <h4>Registered users</h4>
+      <table class="main-table">
+        <tr>
+          <th>Name:</th>
+          <th>Email:</th>
+          <th>Role:</th>
+          <th>Unwatched:</th>
+          <th>Watched:</th>
+        </tr>
+      <% @admindata.each do |user| %>
+        <tr>
+          <td><%= user[0].name %></td>
+          <td><%= user[0].email %></td>
+          <% if user[0].admin? %>
+            <td>Admin</td>
+          <% else %>
+            <td>User</td>
+          <% end %>
+          <td><%= user[1] %></td>
+          <td><%= user[2] %></td>
+        </tr>
+      <% end %>
+    </table>
+    </div>
+  </div>
+  </div>
+  </div>
